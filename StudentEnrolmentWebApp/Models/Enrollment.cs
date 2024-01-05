@@ -10,6 +10,9 @@ namespace StudentEnrolmentWebApp.Models
         public int CourseID { get; set; }
         public string GPA { get; set;}
 
+        public DateTime EnrollmentDate { get; set; }
+        public EnrollmentStatus Status { get; set; }
+
 
     }
 }
