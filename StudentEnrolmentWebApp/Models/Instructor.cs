@@ -1,7 +1,10 @@
-﻿namespace StudentEnrolmentWebApp.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace StudentEnrolmentWebApp.Models
 {
     public class Instructor
     {
+        [Key] 
         public int InstructorID { get; set; }
         public string InstructorName { get; set;}
         public string Subject { get; set; }
