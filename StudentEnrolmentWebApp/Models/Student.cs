@@ -6,7 +6,8 @@ namespace StudentEnrolmentWebApp.Models
     {
         [Key]
         public int StudentID { get; set; }
-        
+        public int GUID { get; set; }
+
         [Required(ErrorMessage = "First name is required"), StringLength(50, MinimumLength = 2)]
         public string FirstName { get; set; }
 
