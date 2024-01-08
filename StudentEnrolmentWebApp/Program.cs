@@ -1,6 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using StudentEnrolmentWebApp;
+
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 // Add services to the container.
+
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddRazorPages();
 
 var app = builder.Build();

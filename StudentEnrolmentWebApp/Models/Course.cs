@@ -8,6 +8,8 @@ namespace StudentEnrolmentWebApp.Models
         public int CourseID { get; set; }
         public string CourseName { get; set; }
         public string CourseDescription { get; set; }
+
+        public int NumberOfCourses { get; set; }
         public int Credits { get; set; }
     }
 }
