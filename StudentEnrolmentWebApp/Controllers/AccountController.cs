@@ -2,7 +2,7 @@
 
 namespace StudentEnrolmentWebApp.Controllers
 {
-    public class LoginController : Controller
+    public class AccountController : Controller
     {
         public IActionResult Login()
         {
@@ -18,12 +18,21 @@ namespace StudentEnrolmentWebApp.Controllers
             }
 
             else
-            { return View(); }
+            {
+                ModelState.AddModelError("", "Username or password entered is valid");
+                return View(); 
+            }
         }
 
         private bool IsValidUser(string userName, string password) 
         {
             return(userName == "admin" || password == "password");
+        }
+
+        [HttpPost]
+        public ActionResult Register(string userName, string password)
+        {
+            return RedirectToAction("Login");
         }
     }
 }
