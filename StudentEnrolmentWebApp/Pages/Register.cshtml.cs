@@ -8,5 +8,14 @@ namespace StudentEnrolmentWebApp.Pages
         public void OnGet()
         {
         }
+
+        public void OnPost()
+        {
+            // This method handles HTTP POST requests
+            // You can add your registration logic here (e.g., save to the database)
+
+            // For simplicity, redirect to login after registration
+            RedirectToPage("/Login");
+        }
     }
 }
