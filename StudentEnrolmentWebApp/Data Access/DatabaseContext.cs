@@ -15,5 +15,7 @@ namespace StudentEnrolmentWebApp
         public DbSet<Student> Student { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Department> Department { get; set; }
+        public DbSet<StudentEnrolmentWebApp.Models.Registration>? Registration { get; set; }
+        public DbSet<StudentEnrolmentWebApp.Models.UserInfo>? UserInfo { get; set; }
     }
 }

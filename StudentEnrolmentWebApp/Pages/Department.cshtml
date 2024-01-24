@@ -1,43 +1,44 @@
 ﻿@page
 @model StudentEnrolmentWebApp.Pages.DepartmentModel
+
 @{
     ViewData["Title"] = "Department";
 }
 
 <h1>Department</h1>
 
-<h4>Movie</h4>
+<h4>Department</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Department.DeptID" />
+            <div class="form-group">
+                <label asp-for="Department.DeptID" class="control-label"></label>
+                <input asp-for="Department.DeptID" class="form-control" />
+                <span asp-validation-for="Department.DeptID" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Department.CourseID" class="control-label"></label>
                 <input asp-for="Department.CourseID" class="form-control" />
                 <span asp-validation-for="Department.CourseID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Department.DepartmentName" class="control-label"></label>
-                <input asp-for="Department.DepartmentName" class="form-control" />
-                <span asp-validation-for="Department.DepartmentName" class="text-danger"></span>
+                <label asp-for="Department.CourseName" class="control-label"></label>
+                <input asp-for="Department.CourseName" class="form-control" />
+                <span asp-validation-for="Department.CourseName" class="text-danger"></span>
             </div>
-            
-            <select id="name" name="DepartmentName" required>
-                <option value="Computer Science">Not started</option>
-                <option value="Electrical Engineering">In Progress</option>
-                <option value="Aerospace Engineering">Completed</option>
-                <option value="Bio-Technology">Completed</option>
-            </select>
-
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="Index">Back to List</a>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

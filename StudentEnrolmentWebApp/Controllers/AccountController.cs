@@ -11,30 +11,31 @@ namespace StudentEnrolmentWebApp.Controllers
         }
 
         // POST: /Register
-        [HttpPost]
-        public IActionResult Register(string firstName, string lastName, string email, string username, string password, string department, string course)
-        {
-            // Registration logic goes here (e.g., save to the database)
+        //    [HttpPost]
+        //    public IActionResult Register(string firstName, string lastName, string email, string username, string password, string department, string course)
+        //    {
+        //        // Registration logic goes here (e.g., save to the database)
 
-            // For simplicity, redirect to login after registration
-            return RedirectToAction("Login");
-        }
+        //        // For simplicity, redirect to login after registration
+        //        return RedirectToAction("Login");
+        //    }
 
-        // GET: /Account/Login
-        public IActionResult Login()
-        {
-            return View();
-        }
+        //    // GET: /Account/Login
+        //    public IActionResult Login()
+        //    {
+        //        return View();
+        //    }
 
-        // POST: /Account/Login
-        [HttpPost]
-        public IActionResult Login(string username, string password)
-        {
-            // Login logic goes here (e.g., validate credentials)
+        //    // POST: /Account/Login
+        //    [HttpPost]
+        //    public IActionResult Login(string username, string password)
+        //    {
+        //        // Login logic goes here (e.g., validate credentials)
 
-            // For simplicity, redirect to home page after login
-            return RedirectToAction("Index", "Home");
-        }
+        //        // For simplicity, redirect to home page after login
+        //        return RedirectToAction("Index", "Home");
+        //    }
+        //}
+
     }
-
 }

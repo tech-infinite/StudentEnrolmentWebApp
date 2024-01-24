@@ -10,11 +10,11 @@ using StudentEnrolmentWebApp.Models;
 
 namespace StudentEnrolmentWebApp.Pages
 {
-    public class DepartmentModel : PageModel
+    public class UserInfoModel : PageModel
     {
         private readonly StudentEnrolmentWebApp.DatabaseContext _context;
 
-        public DepartmentModel(StudentEnrolmentWebApp.DatabaseContext context)
+        public UserInfoModel(StudentEnrolmentWebApp.DatabaseContext context)
         {
             _context = context;
         }
@@ -25,18 +25,18 @@ namespace StudentEnrolmentWebApp.Pages
         }
 
         [BindProperty]
-        public Department Department { get; set; } = default!;
+        public UserInfo UserInfo { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Department == null || Department == null)
+          if (!ModelState.IsValid || _context.UserInfo == null || UserInfo == null)
             {
                 return Page();
             }
 
-            _context.Department.Add(Department);
+            _context.UserInfo.Add(UserInfo);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
