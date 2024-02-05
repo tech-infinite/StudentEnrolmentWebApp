@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StudentEnrolmentWebApp.Models;
 
 namespace StudentEnrolmentWebApp.Controllers
 {
@@ -12,8 +13,21 @@ namespace StudentEnrolmentWebApp.Controllers
                 _databaseContext = databaseContext;
         }
 
-        [HttpGet]
+        
         public IActionResult Index()
+        {
+            List<Course> courses = _databaseContext.Courses.ToList();
+            return View(courses);
+
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Course courseObj)
         {
             return View();
         }
