@@ -10,10 +10,7 @@ namespace StudentEnrolmentWebApp.Controllers
                 _databaseContext = databaseContext;
         }
 
-        [HttpGet]
-        public IActionResult Index()
-        {
-            return View();
-        }
+       
+      
     }
 }
